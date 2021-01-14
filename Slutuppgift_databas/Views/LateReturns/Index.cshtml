@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Slutuppgift_databas.Models.Rental>
+@using Slutuppgift_databas.Models;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Sena returer";
+}
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<h1>Sena returer</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory.Book.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpectedReturnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Inventory.InventoryId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Inventory.Book.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RentalDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpectedReturnDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReturnDate)
+                </td>
+                <td>
+                    <a asp-controler="LateReturns" asp-action="Edit" asp-route-id="@item.RentalId">Ändra</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RentalId">Lämna tillbaka</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
