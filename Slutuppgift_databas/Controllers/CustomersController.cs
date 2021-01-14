@@ -131,8 +131,8 @@ namespace Slutuppgift_databas.Controllers
             {
                 CustomerId = customerId,
                 InventoryId = availableInv.InventoryId,
-                RentalDate = DateTime.Now.AddDays(-60),
-                ExpectedReturnDate = DateTime.Now.AddDays(-30),
+                RentalDate = DateTime.Now,
+                ExpectedReturnDate = DateTime.Now.AddDays(+30),
                 Rented = "Yes"
             };
 

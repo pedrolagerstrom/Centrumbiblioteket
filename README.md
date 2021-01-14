@@ -18,4 +18,4 @@ The application is deployed with Azures cloudservers that is launched on [Azures
 * Bootstrap
 
 ## Architecture
-![Architecture](https://i.gyazo.com/908531b23d97888ae16cb24059b69d24.png)
+![Architecture](https://i.gyazo.com/9afe6b70f2050eb7b18d16b30a0539d7.png)

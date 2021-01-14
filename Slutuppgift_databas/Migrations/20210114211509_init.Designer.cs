@@ -10,7 +10,7 @@ using Slutuppgift_databas.Data;
 namespace Slutuppgift_databas.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20210114185031_init")]
+    [Migration("20210114211509_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
